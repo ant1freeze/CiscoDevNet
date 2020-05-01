@@ -5,7 +5,7 @@ core:
 inventory:
   plugin: nornir.plugins.inventory.netbox.NBInventory
   options:
-    nb_url: 'http://ip_nb:8080'
+    nb_url: 'http://nb_ip:8080'
     nb_token: 'nb_token'
     ssl_verify: False
     
