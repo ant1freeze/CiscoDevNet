@@ -1,11 +1,16 @@
 from nornir import InitNornir
 from nornir.plugins.tasks.networking import netmiko_send_command
 from nornir.plugins.tasks.networking import tcp_ping
+import re
+import sys
 
 with open('input_mac','r') as f:
     input_mac = f.read()
-
-print("We need to find this mac address: "+input_mac)
+if re.match(r'([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}|([0-9a-fA-F]){12}$',input_mac.strip()):
+    print("We need to find this mac address: "+input_mac)
+else:
+    print('MAC is incorrect! Please check it!')
+    sys.exit()
 
 nr = InitNornir(config_file=r"C:\Users\alexa\PycharmProjects\untitled\denvet_day2\inventory\config.yaml")
 alive_hosts= []
