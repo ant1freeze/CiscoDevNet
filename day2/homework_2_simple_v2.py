@@ -27,17 +27,25 @@ for host, r in ping_res.items():
 print('='*10,'We have '+str(count)+' alive hosts from '+str(count_all)+'.',sep='\n')
 
 filtered = nr.filter(marked=True)
+
 print('='*10,'Get mac address table from all alive hosts...',sep='\n')
+
 mac_tables = filtered.run(task=netmiko_send_command, command_string='sh mac address-table',use_textfsm=True)
+
 print('='*10,'Get interfaces switchport table from all alive hosts...',sep='\n')
+
 int_sws = filtered.run(task=netmiko_send_command, command_string='sh int sw',use_textfsm=True)
+
 print('='*10,'Remove all trunk ports and make dict - SWITCH:[PORT1,PORT2,...]',sep='\n')
+
 for host, int_sw in int_sws.items():
     int_dict[host] = []
     for int in int_sw[0].result:
         if int['admin_mode'] == 'static access':
             int_dict[host].append(int['interface'])
+            
 print('='*10,'Find input mac on access ports and return HOST and dict - MAC',sep='\n')
+
 for host, mac_table in mac_tables.items():
     for mac in mac_table[0].result:
         if mac['destination_address'] == input_mac and mac['destination_port'] in int_dict[host]:
