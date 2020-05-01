@@ -1,0 +1,5 @@
+hostname;ip;username;password;secret;device_type
+esw59.ryb26;10.130.11.59;orange;Fbbr893L#df-;Fbbr893L#df-;cisco_ios_telnet
+esw57.tpl15;10.130.6.57;orange;Fbbr893L#df-;Fbbr893L#df-;cisco_ios_telnet
+esw0.kln;10.130.9.28;orange;Fbbr893L#df-;Fbbr893L#df-;cisco_ios_telnet
+csr.ryb47;176.74.8.141;orange;Fbbr893L#df-;Fbbr893L#df-;cisco_ios_telnet
