@@ -1,0 +1,35 @@
+sw1:
+    hostname: 10.130.6.1
+    groups:
+        - switch
+
+sw2:
+    hostname: 10.130.6.2
+    groups:
+        - switch
+
+sw39:
+    hostname: 10.130.6.39
+    groups:
+        - switch
+
+sw40:
+    hostname: 10.130.6.40
+    groups:
+        - switch
+
+sw41:
+    hostname: 10.130.6.41
+    groups:
+        - switch
+
+sw43:
+    hostname: 10.130.6.43
+    groups:
+        - switch
+
+sw44:
+    hostname: 10.130.6.44
+    groups:
+        - switch
+

@@ -1,0 +1,24 @@
+---
+switch:
+  port: 23
+  platform: ios
+  data:
+    role: access
+    type: esw
+  connection_options:
+    netmiko:
+      extras:
+        device_type: 'cisco_ios_telnet'
+
+offline:
+  port: 22
+  platform: ios
+  data:
+    role: offline
+
+router:
+  port: 22
+  platform: cisco_ios
+  data:
+    role: core
+
