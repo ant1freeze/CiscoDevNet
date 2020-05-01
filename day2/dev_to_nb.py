@@ -1,8 +1,8 @@
 import pynetbox
 from nornir import InitNornir
 
-NETBOX_URL = 'http://192.168.20.201:8080/'
-TOKEN = 'c6d1b65de45b1e0635ca0bb924240ab073f29795'
+NETBOX_URL = 'http://nb_ip:8080/'
+TOKEN = 'nb_token'
 
 nb = pynetbox.api(url=NETBOX_URL, token=TOKEN)
 
