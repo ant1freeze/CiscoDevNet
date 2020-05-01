@@ -5,8 +5,8 @@ import re
 import sys
 
 with open('input_mac','r') as f:
-    input_mac = f.read()
-if re.match(r'([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}|([0-9a-fA-F]){12}$',input_mac.strip()):
+    input_mac = f.read().strip()
+if re.match(r'([0-9a-fA-F]{2}([:-]|$)){6}$|([0-9a-fA-F]{4}([.]|$)){3}|([0-9a-fA-F]){12}$',input_mac):
     print("We need to find this mac address: "+input_mac)
 else:
     print('MAC is incorrect! Please check it!')
@@ -48,7 +48,6 @@ for host, int_sw in int_sws.items():
     for int in int_sw[0].result:
         if int['admin_mode'] == 'static access':
             int_dict[host].append(int['interface'])
-            
 print('='*10,'Find input mac on access ports and return HOST and dict - MAC',sep='\n')
 
 for host, mac_table in mac_tables.items():
