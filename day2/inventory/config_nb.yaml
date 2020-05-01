@@ -5,8 +5,8 @@ core:
 inventory:
   plugin: nornir.plugins.inventory.netbox.NBInventory
   options:
-    nb_url: 'http://192.168.20.201:8080'
-    nb_token: 'c6d1b65de45b1e0635ca0bb924240ab073f29795'
+    nb_url: 'http://nb_url:8080'
+    nb_token: 'nb_token'
     ssl_verify: False
-    defaults_file: "inventory/defaults.yaml"
-  #transform_function: "helpers.adapt_user_password"
+    
+  
